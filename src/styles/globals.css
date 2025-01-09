@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #ffffff;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "Jost", serif;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;   
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+
+.blink-text {
+  animation: blink 1.3s infinite ease-in-out ;
+  
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  select[name="countryCode"] {
+      padding: 8px; /* Adjust padding for mobile */
+  }
+}
+
+.jost-thin {
+  font-family: "Jost", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.jost-extralight {
+  font-family: "Jost", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.jost-light {
+  font-family: "Jost", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.jost-regular {
+  font-family: "Jost", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.jost-medium {
+  font-family: "Jost", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.jost-semibold {
+  font-family: "Jost", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.jost-bold {
+  font-family: "Jost", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.jost-extrabold {
+  font-family: "Jost", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.jost-black {
+  font-family: "Jost", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.jost-thin-italic {
+  font-family: "Jost", serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.jost-extralight-italic {
+  font-family: "Jost", serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.jost-light-italic {
+  font-family: "Jost", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.jost-regular-italic {
+  font-family: "Jost", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.jost-medium-italic {
+  font-family: "Jost", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.jost-semibold-italic {
+  font-family: "Jost", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.jost-bold-italic {
+  font-family: "Jost", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.jost-extrabold-italic {
+  font-family: "Jost", serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.jost-black-italic {
+  font-family: "Jost", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
