@@ -38,7 +38,7 @@ const Banner = () => {
                 {/* Left Section */}
                 <div className="w-full md:w-1/2 flex flex-col gap-y-4">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
-                        <span className="text-gradient">CBAP</span> Certification Training
+                        <span className="text-gradient">ECBA</span> Certification Training
                     </h2>
                     <div className="text-sm md:text-base lg:text-xl mt-2 text-gray-600">
                         Certified Business Analyst Professionals Earn{' '}
