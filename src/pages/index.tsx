@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Head>
-      <title>New CBAP Certification Form Submission For Enquiry</title>
+      <title>New ECBA Certification Form Submission For Enquiry</title>
                 <meta name="title" content={'CBAP Certification Training'} />
                 <meta name='robots' content={'noindex,nofollow'} />
       </Head>
