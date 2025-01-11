@@ -1,36 +1,37 @@
 export const handleFormSubmit = async (formData: {
     fullName: string;
+    trainerOption?: string;
     email: string;
     selectedCountry: string;
     phoneNumber: string;
-    city: string;
+    city?: string;
     message: string;
 }) => {
-    const { fullName, email, selectedCountry, phoneNumber, city, message } = formData;
+    const { fullName, email, selectedCountry, phoneNumber, city, message, trainerOption } = formData;
 
     // Validation
     if (!fullName || !/^[A-Za-z]+(?: [A-Za-z]+)*$/.test(fullName)) {
-        return "Full Name is required.";
+        return Promise.reject("Full Name is required and should contain only alphabets.");
     }
 
-    if (!email) {
-        return "Email is required.";
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-        return "Email is invalid.";
+    if (!email || !/\S+@\S+\.\S+/.test(email)) {
+        return Promise.reject("Email is invalid or missing.");
     }
 
     if (!selectedCountry) {
-        return "Country code is required.";
+        return Promise.reject("Country code is required.");
     }
 
-    if (!phoneNumber) {
-        return "Phone Number is required.";
-    } else if (!/^\d+$/.test(phoneNumber)) {
-        return "Phone Number should be numeric.";
+    if (!phoneNumber || !/^\d+$/.test(phoneNumber)) {
+        return Promise.reject("Phone Number is required and should be numeric.");
     }
 
     if (!city) {
-        return "City is required.";
+        return Promise.reject("City is required.");
+    }
+
+    if (!message) {
+        return Promise.reject("Message is required.");
     }
 
     try {
@@ -43,12 +44,13 @@ export const handleFormSubmit = async (formData: {
         });
 
         if (!response.ok) {
-            throw new Error("Failed to send email");
+            const errorText = await response.text();
+            throw new Error(`Failed to send email: ${errorText}`);
         }
-        
 
+        return "Form submitted successfully!";
     } catch (error) {
         console.error("Error during form submission:", error);
-
+        return Promise.reject("An unknown error occurred. Please try again later.");
     }
 };

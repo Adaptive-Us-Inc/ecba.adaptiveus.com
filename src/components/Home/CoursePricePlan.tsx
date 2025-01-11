@@ -3,32 +3,28 @@ import FormPopup from "../others/FormPopup";
 
 const plans = [
     {
-        title: "CBAP Master Class",
-        price: "USD 949",
-        oldPrice: "USD 1249",
+        title: "ECBA Master Class",
+        price: "USD 749",
+        oldPrice: "USD 449",
         discount: "$300 OFF",
-        company: "Our Company",
     },
     {
-        title: "CBAP Master Class with CBAP Exam Voucher",
-        price: "USD 1499",
-        oldPrice: "USD 1899",
+        title: "ECBA Master Class with ECBA Exam Voucher",
+        price: "USD 1099",
+        oldPrice: "USD 749",
+        discount: "$350 OFF",
+    },
+    {
+        title: "ECBA Ultimate",
+        price: "USD 1599",
+        oldPrice: "USD 1199",
         discount: "$400 OFF",
-        company: "Our Company",
     },
     {
-        title: "CBAP Ultimate",
-        price: "USD 1999",
-        discount: "$400 OFF",
-        oldPrice: "USD 2399",
-        company: "Our Company",
-    },
-    {
-        title: "CBAP Ultimate with CBAP Exam Voucher",
-        price: "USD 2549",
-        oldPrice: "USD 3049",
-        discount: "$500 OFF",
-        company: "Our Company",
+        title: "ECBA Ultimate with ECBA Exam Voucher",
+        price: "USD 1949",
+        oldPrice: "USD 1499",
+        discount: "$450 OFF",
     },
 ];
 
@@ -44,7 +40,7 @@ const CoursePricePlan = () => {
         <section className="bg-[#F5EEE9] py-16" id="course-price-plans">
             <div className="container mx-auto px-6">
                 <h2 className="text-2xl lg:text-4xl font-bold text-gray-800 text-center mb-10">
-                    CBAP Course Price Plans
+                    ECBA Course Price Plans
                 </h2>
 
                 {/* Responsive Table */}

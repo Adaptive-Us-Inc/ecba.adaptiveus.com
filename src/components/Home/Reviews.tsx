@@ -1,50 +1,43 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Slider from "react-slick";
-import Chioma from "../../../public/images/Reviews/Chioma Ogamba.webp";
-import Ghalib from "../../../public/images/Reviews/Ghalib-2.webp";
-import Kirill from "../../../public/images/Reviews/Kirill.webp";
-import Samantha from "../../../public/images/Reviews/Samantha.webp";
-import Sandra from "../../../public/images/Reviews/Sandra.webp";
-import Satenik from "../../../public/images/Reviews/Satenik.webp";
+import Bartlomiej from "../../../public/images/Reviews/Bartlomiej-Hagowski-2.webp";
+import Khady from "../../../public/images/Reviews/Khady Sane-webp.webp";
+import Kuda from "../../../public/images/Reviews/Kuda-Kamushinda-1.webp";
+import Sarah from "../../../public/images/Reviews/Sarah-Beasley-webp.webp";
+import Shelly from "../../../public/images/Reviews/Shelly-Johnson.jpg";
 import FormPopup from "../others/FormPopup";
 
 const reviews = [
     {
-        name: "Samantha Carvalho",
-        review: "Adaptive is a one-stop solution for CBAP Prep that takes away all the confusion of applying & preparing for CBAP. Their resources are on point with extremely knowledgeable and experienced faculty. Thank you for the stellar experience & exam success.",
+        name: "Shelly Johnson",
+        review: "Adaptive ECBA course is amazing, the live classes, material, videos and quizzes are all so thorough that the exam feels no different than Adaptive's simulations. I am so pleased with the course that I am signing up for the CCBA instructor-led classes!",
         country: "USA",
-        photo: Samantha,
+        photo: Sarah,
     },
     {
-        name: "Ghalib Riaz",
-        review: "I passed CBAP on the first attempt. Your guarantees are not just words! I want to acknowledge that your training material is very reassuring and prepares one for the exam. It gives me the courage to take up a BA role with more confidence.",
+        name: "Bartlomiej Hagowski",
+        review: "The training material from Adaptive US is exactly what you need to be prepared for IIBA certification. The online classes helped a lot with understanding BABOK. LN Mishra did a great job in supporting and preparing me for the ECBA exam. Thanks LN :)",
+        country: "USA",
+        photo: Khady,
+    },
+    {
+        name: "Kuda Kamushinda",
+        review: "From day one, Adaptive US was incredibly supportive. With their ECBA Training & material, I am proud to say that I did it in just 6 weeks. The classes are filled with practical examples. so for those looking to give them a shot, I highly recommend them!",
         country: "Canada",
-        photo: Ghalib,
+        photo: Bartlomiej,
     },
     {
-        name: "Chioma Ogamba",
-        review: "Studying at Adaptive US was the BEST choice I made. I passed the CBAP exam in just 1 month. Their customer service is top notch! A huge THANK YOU to the faculty Lora McCoy, LN Mishra, Peter Johnson at Adaptive US that taught and helped me immensely!",
+        name: "Sarah Beasley",
+        review: "Adaptive was instrumental in my passing the ECBA. LN was an amazing instructor who not only took the time to teach us the skills but also how to apply them, all in an interactive learning environment. I wouldn't have passed without Adaptive and LN.",
         country: "USA",
-        photo: Chioma,
+        photo: Shelly,
     },
     {
-        name: "Sandra Mafiejor",
-        review: "Adaptive’s course was a game-changer in my CBAP exam journey. The extensive range of learning materials helped me achieve higher scores in all knowledge areas after studying rigorously for 3 months. I finished my exam in less than 100 minutes, well under the allotted 210 minutes.",
-        country: "USA",
-        photo: Sandra,
-    },
-    {
-        name: "Kirill Sergeev",
-        review: "I've been learning with Adaptive to prepare for my CBAP Exam. I could say that without the simulations that they provide it would have been highly complicated to pass the exam since the questions available in their question bank and simulations are very much similar to what you'll be asked during the real exam. Really appreciate the trainers’ efforts and everyone involved!",
-        country: "Poland",
-        photo: Kirill,
-    },
-    {
-        name: "Satenik Stepanyan",
-        review: "Adaptive US provided an exceptional CBAP training experience! The instructors were experts who made complex concepts easy to understand. Learning was made practical and relevant through engaging sessions with real-world examples. As a result of my training with Adaptive US, I not only passed the CBAP exam but also gained valuable skills that have benefited my career growth. It is highly recommended!",
-        country: "Canada",
-        photo: Satenik,
+        name: "Khady Sane",
+        review: "I was trained by LN for ECBA training. I really liked the course format (online). Explanations were clear and concise and course content was easy to follow even though I am a beginner in the area. No doubt Adaptive is the way to go to get you to your goal! :)",
+        country: "Nigeria",
+        photo: Kuda,
     },
 ];
 

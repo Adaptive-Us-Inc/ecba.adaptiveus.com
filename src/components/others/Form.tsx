@@ -6,9 +6,10 @@ import { countryCode } from "./CountryCode"; // Adjust the path as needed
 interface FormProps {
     onClose: () => void;
     onSuccess: (message: string) => void;
+    trainers?: boolean; // Indicates whether the trainer-specific field should appear
 }
 
-const Form: React.FC<FormProps> = ({ onClose, onSuccess }) => {
+const Form: React.FC<FormProps> = ({ onClose, onSuccess, trainers }) => {
     const [selectedCountry, setSelectedCountry] = useState("+1"); // Default to US
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
@@ -19,7 +20,11 @@ const Form: React.FC<FormProps> = ({ onClose, onSuccess }) => {
     const [countries, setCountries] = useState<{ name: string; code: string }[]>([
         { name: "US", code: "+1" },
     ]);
+    const [trainerOption, setTrainerOption] = useState(""); // State for the new select field
     const [isDropdownLoaded, setIsDropdownLoaded] = useState(false);
+
+    const trainerOptions = ["Victoria Cupet", "LN Mishra", "Lora McCoy", "Olivia Hampton"]; // Example trainer names
+
 
     const loadCountryCodes = () => {
         if (!isDropdownLoaded) {
@@ -41,33 +46,42 @@ const Form: React.FC<FormProps> = ({ onClose, onSuccess }) => {
             setMessage("");
             setPhoneNumber("");
             setCity("");
+            setTrainerOption("");
         };
 
         if (!fullName || !/^[A-Za-z]+(?: [A-Za-z]+)*$/.test(fullName)) {
             setAlertMessage("Please enter a valid full name.");
             return;
         }
-    
+
         if (!email || !/\S+@\S+\.\S+/.test(email)) {
             setAlertMessage("Please enter a valid email address.");
             return;
         }
-    
+
         if (!selectedCountry) {
             setAlertMessage("Please select a country code.");
             return;
         }
-    
+
         if (!phoneNumber || !/^\d+$/.test(phoneNumber)) {
             setAlertMessage("Please enter a valid phone number (numeric only).");
             return;
         }
-    
+
         if (!city) {
             setAlertMessage("Please enter your city.");
             return;
         }
-    
+
+        if (trainers && !trainerOption) {
+            setAlertMessage("Please select a trainer.");
+            return;
+        }
+        if (!message) {
+            setAlertMessage("Fill the message field.");
+            return "Fill the message field.";
+        }
         onSuccess("Your message has been sent successfully. We will get back to you soon");
         clearForm();
 
@@ -79,11 +93,13 @@ const Form: React.FC<FormProps> = ({ onClose, onSuccess }) => {
                 phoneNumber,
                 city,
                 message,
+                trainerOption: trainers ? trainerOption : '',
             });
-
+            onSuccess(resultMessage); // Display success message
         } catch (error) {
-            console.error("Something went wrong, please try again later.");
+            setAlertMessage( "An unknown error occurred. Please try again later."); // Display the specific error message
         }
+        
     };
 
     const closeAlert = () => {
@@ -137,27 +153,45 @@ const Form: React.FC<FormProps> = ({ onClose, onSuccess }) => {
                         className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-2/3 focus:outline-none rounded-r-md"
                     />
                 </div>
+                {trainers && (
+                    <select
+                        value={trainerOption}
+                        onChange={(e) => setTrainerOption(e.target.value)}
+                        className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-full md:w-11/12 focus:outline-none rounded-md"
+                    >
+                        <option value="" disabled>
+                            Select a Trainer
+                        </option>
+                        {trainerOptions.map((trainer) => (
+                            <option key={trainer} value={trainer}>
+                                {trainer}
+                            </option>
+                        ))}
+                    </select>
+                )}
+                {/* {!trainers && ( */}
+                    <input
+                        type="text"
+                        className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-full md:w-11/12 focus:outline-none rounded-md"
+                        placeholder="Your City Name"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                    />
+                {/* )} */}
 
-                <input
-                    type="text"
-                    className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-full md:w-11/12 focus:outline-none rounded-md"
-                    placeholder="Your City Name"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                />
+                    <textarea
+                        className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-full md:w-11/12 focus:outline-none rounded-md"
+                        placeholder="Message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                    />
 
-                <textarea
-                    className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-full md:w-11/12 focus:outline-none rounded-md"
-                    placeholder="Message"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                />
+
 
                 <div className="w-full flex items-center justify-center">
                     <button
                         type="submit"
                         className="border w-11/12 py-2 text-sm md:text-sm lg:text-base bg-custom-gradient text-white rounded-md"
-
                     >
                         Submit Details
                     </button>

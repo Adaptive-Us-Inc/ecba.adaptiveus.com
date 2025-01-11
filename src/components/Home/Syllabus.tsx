@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import book from '../../../public/images/Cbap.png';
+import book from '../../../public/images/ecba-cert-badge-400x400.webp';
 import Image from 'next/image';
 import FormPopup from '../others/FormPopup';
 
@@ -18,7 +18,7 @@ const Syllabus = () => {
                 {/* Left Content */}
                 <div className="md:w-3/4 flex flex-col gap-y-5 text-center lg:text-left">
                     <h2 className="text-lg lg:text-3xl font-bold text-black leading-snug">
-                        Kickstart your CBAP journey! <br />
+                        Kickstart your ECBA journey! <br />
                         Download the syllabus now and explore a pathway to comprehensive learning.
                     </h2>
                     <div className="flex justify-center items-center">

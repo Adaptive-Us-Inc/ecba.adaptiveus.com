@@ -6,133 +6,105 @@ const Faq = () => {
 
     const faqs = [
         {
-            question: "What is CBAP certification?",
-            answer: "CBAP is a globally recognized certification for business analysts. It signifies expertise in business analysis."
+            question: "What is ECBA Certification?",
+            answer: "The Entry Certificate in Business Analysis (ECBA) is an entry-level certification from the International Institute of Business Analysis (IIBA) that validates foundational knowledge in business analysis."
         },
         {
-            question: "How do I apply for CBAP certification?",
-            answer: "You can apply for CBAP certification online through the International Institute of Business Analysis (IIBA) website, where you need to meet specific eligibility criteria."
+            question: "Who is ECBA Certification for?",
+            answer: "It is designed for aspiring business analysts, students, and professionals transitioning into business analysis roles, regardless of prior experience."
         },
         {
-            question: "What are the eligibility criteria for CBAP?",
-            answer: "To apply for CBAP, you need a minimum of 7,500 hours of business analysis work experience and 35 hours of professional development within the last 10 years."
+            question: "What is the format of the ECBA exam?",
+            answer: "The ECBA exam is a 1-hour test with 50 multiple-choice questions conducted online through a remote proctoring system."
         },
         {
-            question: "What is the CBAP exam format?",
-            answer: "The CBAP exam consists of 120 multiple-choice questions and lasts for 4 hours."
+            question: "What is the passing score for ECBA?",
+            answer: "While IIBA does not disclose a specific passing score, it is generally estimated to be around 70-75%."
         },
         {
-            question: "How can I prepare for the CBAP exam?",
-            answer: "Preparation involves studying the Business Analysis Body of Knowledge (BABOK), attending training courses, and practicing with sample questions."
+            question: "How long is the ECBA certification valid?",
+            answer: "The ECBA certification is valid for life and does not require renewal."
         },
         {
-            question: "What is the passing score for CBAP?",
-            answer: "The passing score is typically around 75%, but it may vary."
+            question: "Are there prerequisites for ECBA certification?",
+            answer: "There are no specific prerequisites, such as work experience or education, making it accessible to anyone interested in business analysis."
         },
         {
-            question: "How much does the CBAP exam cost?",
-            answer: "The exam fee for IIBA members is around $325 USD."
+            question: "What is the BABOK Guide, and how can I access it?",
+            answer: "The BABOK Guide is IIBA's reference framework for business analysis practices. It is available for purchase on the IIBA website and is included free with IIBA membership."
         },
         {
-            question: "How long is the CBAP certification valid?",
-            answer: "CBAP certification is valid for three years."
+            question: "How do I apply for ECBA certification?",
+            answer: "You can apply online through the IIBA website by selecting the ECBA certification option and paying the required fees. No separate application process is needed."
         },
         {
-            question: "How can I renew my CBAP certification?",
-            answer: "To renew your certification, you need to earn Continuing Development Units (CDUs) and pay the renewal fee."
+            question: "What is the cost of ECBA certification?",
+            answer: "The total cost includes the IIBA membership and exam fees, typically ranging from $250 to $370, depending on your location."
         },
         {
-            question: "What is the BABOK guide?",
-            answer: "The BABOK (Business Analysis Body of Knowledge) is a guide published by IIBA that defines the standard framework for business analysis practices."
+            question: "How can I prepare for the ECBA exam?",
+            answer: "You can use IIBA-endorsed training courses, study guides, and practice tests. Adaptive US provides 1000+ practice questions and full-length simulations to prepare effectively."
         },
         {
-            question: "What are the knowledge areas in BABOK?",
-            answer: "The six knowledge areas in BABOK are: Business Analysis Planning and Monitoring, Elicitation and Collaboration, Requirements Life Cycle Management, Strategy Analysis, Requirements Analysis and Design Definition, and Solution Evaluation."
+            question: "Can I take the ECBA exam online?",
+            answer: "Yes, the ECBA exam is conducted online and can be taken remotely from home or the workplace."
         },
         {
-            question: "Can I apply for CBAP if I have a non-business degree?",
-            answer: "Yes, having a business analysis degree is not a requirement. BA work experience is the key eligibility factor."
+            question: "What study materials are available for ECBA preparation?",
+            answer: "Study guides, online courses, practice tests, and resources like Adaptive US’s condensed ECBA guide are available for comprehensive preparation."
         },
         {
-            question: "How can I document my BA work experience for CBAP?",
-            answer: "You must use the IIBA Experience Verification Form to document your work experience, detailing the specific hours spent on business analysis activities."
+            question: "How long should I study for the ECBA exam?",
+            answer: "Preparation time varies but typically ranges between 1-2 months, depending on prior knowledge and study dedication."
         },
         {
-            question: "How long does it take to become CBAP certified?",
-            answer: "The time to certification depends on individual preparation and application processing. Typically, it takes 3 to 6 months."
+            question: "What are the benefits of IIBA membership?",
+            answer: "Membership provides access to the BABOK Guide, discounts on certification fees, networking opportunities, and additional resources."
         },
         {
-            question: "Is CBAP training mandatory?",
-            answer: "While formal training is not mandatory, it is highly recommended as part of preparation for the exam."
+            question: "What is the role of an ECBA-certified Business Analyst?",
+            answer: "ECBA-certified professionals are equipped with foundational skills to assist in business analysis activities such as requirements gathering, documentation, and stakeholder communication."
         },
         {
-            question: "How can I earn CDUs for CBAP renewal?",
-            answer: "Attend relevant training, webinars, and conferences to earn CDUs for CBAP certification renewal."
+            question: "What is the average salary increase after ECBA certification?",
+            answer: "While specific figures vary, ECBA certification can enhance your earning potential and career opportunities in business analysis."
         },
         {
-            question: "How can I find CBAP study materials?",
-            answer: "Study guides, books, and online courses specifically designed for CBAP preparation are available from various providers, including Adaptive US."
+            question: "Can I retake the ECBA exam if I fail?",
+            answer: "Yes, you can retake the exam by paying the retake fee, which is $95. Adaptive US offers a success guarantee, covering retake fees for its training students."
         },
         {
-            question: "Can I take the CBAP exam online?",
-            answer: "Yes, CBAP exams can be taken remotely or at an authorized test center."
+            question: "How are ECBA results announced?",
+            answer: "Results are displayed immediately after completing the exam."
         },
         {
-            question: "Can I apply for CBAP without IIBA membership?",
-            answer: "Yes, you can apply for CBAP as a non-member, though you won’t receive member benefits, such as discounts on exam fees."
+            question: "Is the ECBA certification recognized globally?",
+            answer: "Yes, ECBA is widely recognized as a benchmark for foundational business analysis skills across industries and geographies."
         },
         {
-            question: "What is the application fee for CBAP?",
-            answer: "The CBAP application fee is $145 USD, though local taxes may apply."
+            question: "What happens after earning ECBA certification?",
+            answer: "After earning ECBA, you can advance to higher-level certifications like CCBA and CBAP as you gain more experience."
         },
         {
-            question: "How long is the CBAP application valid?",
-            answer: "Once your CBAP application is approved, it is valid for one year."
+            question: "How does Adaptive US support ECBA preparation?",
+            answer: "Adaptive US provides IIBA-endorsed training, access to 1000+ practice questions, six full-length simulations, a condensed study guide, and a success guarantee for exam preparation."
         },
         {
-            question: "Can I use my CBAP certification for job opportunities?",
-            answer: "Yes, CBAP certification demonstrates your expertise and enhances career prospects in business analysis."
+            question: "Can students apply for ECBA certification?",
+            answer: "Yes, students and individuals without prior work experience can apply for ECBA, as it is designed for beginners in business analysis."
         },
         {
-            question: "How often should I renew my CBAP certification?",
-            answer: "CBAP certification needs to be renewed every three years."
+            question: "How can I schedule or reschedule my ECBA exam?",
+            answer: "You can schedule or reschedule your exam through the IIBA’s official testing platform. Rescheduling may involve additional fees."
         },
         {
-            question: "Can I take the CBAP exam without prior training?",
-            answer: "While not mandatory, taking training is highly recommended as it will ensure you are fully prepared for the exam."
+            question: "What is the role of ECBA in career advancement?",
+            answer: "ECBA serves as a strong foundation for launching a career in business analysis, leading to roles like Business Analyst, Product Analyst, and Systems Analyst."
         },
         {
-            question: "What is the CBAP application approval time?",
-            answer: "Approval can be quick, but if your application is selected for audit, it may take 2-3 weeks."
-        },
-        {
-            question: "Can I reschedule my CBAP exam?",
-            answer: "Yes, you can reschedule your exam, but additional fees may apply depending on the provider."
-        },
-        {
-            question: "Can I use CBAP study materials from previous editions?",
-            answer: "It’s recommended to use the latest edition of study materials to ensure alignment with the current exam."
-        },
-        {
-            question: "What is the pass rate for CBAP?",
-            answer: "The pass rate varies, but it’s generally around 70-75%."
-        },
-        {
-            question: "Can I apply for CBAP if I am self-employed?",
-            answer: "Yes, if you meet the experience requirements, self-employed business analysts can apply for CBAP."
-        },
-        {
-            question: "Can I apply for CBAP if I have a technical background?",
-            answer: "Yes, CBAP is suitable for both technical and non-technical professionals, as long as you have relevant business analysis experience."
-        },
-        {
-            question: "Is CBAP recognized globally?",
-            answer: "Yes, CBAP is recognized and respected worldwide."
-        },
-        {
-            question: "How can I join a CBAP study group?",
-            answer: "You can join online forums, social media groups, or local business analysis networks for study group opportunities."
-        },
+            question: "Are there any additional benefits for Adaptive US students?",
+            answer: "Yes, Adaptive US provides discounted ECBA exam vouchers, exclusive study materials, and a high success rate, making it a trusted choice for ECBA training."
+        }
     ];
     
     

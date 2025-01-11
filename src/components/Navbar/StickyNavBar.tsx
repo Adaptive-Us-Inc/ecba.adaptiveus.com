@@ -18,7 +18,7 @@ const StickyNavBar = () => {
         { href: "#overview", label: "Overview" },
         { href: "#Why-choose-us", label: "Why Choose Us?" },
         { href: "#syllabus", label: "Syllabus" },
-        { href: "#course-price-plans", label: "CBAP Course Price Plans" },
+        { href: "#course-price-plans", label: "ECBA Course Price Plans" },
         { href: "#eligibility", label: "Eligibility" },
         { href: "#reviews", label: "Reviews" },
         { href: "#trainers", label: "Trainers" },

@@ -29,7 +29,7 @@ const Banner = () => {
         'IIBA Approved Courseware',
         '2 Free Retakes',
         'Success Guaranteed',
-        '850+ CBAP Certified',
+        '675+ ECBA Certified',
     ];
 
     return (
@@ -38,7 +38,7 @@ const Banner = () => {
                 {/* Left Section */}
                 <div className="w-full md:w-1/2 flex flex-col gap-y-4">
                     <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">
-                        <span className="text-gradient">CBAP</span> Certification Training
+                        <span className="text-gradient">ECBA</span> Certification Training
                     </h2>
                     <div className="text-sm md:text-base lg:text-xl mt-2 text-gray-600">
                         Certified Business Analyst Professionals Earn{' '}
@@ -79,7 +79,7 @@ const Banner = () => {
                         className="text-base md:text-base lg:text-lg w-fit bg-custom-gradient py-1 px-2 md:py-1.5 md:px-3 rounded-md text-white"
                         onClick={handleApplyNowClick}
                     >
-                        Unlock Your Potential With Expert Guidance
+                       Start Your ECBA Journey – Enroll Now!
                     </button>
                     <FormPopup
                         isVisible={isPopupVisible}
@@ -88,6 +88,7 @@ const Banner = () => {
                             setIsDownloadRequested(false);
                         }}
                         isDownloadRequested={isDownloadRequested}
+                        trainers={false}
                     />
                 </div>
 
@@ -96,6 +97,7 @@ const Banner = () => {
                     <Form
                         onClose={() => { }}
                         onSuccess={handleFormSuccess}
+                        trainers={false}
                     />
                     {successMessage && (
                         <Popup

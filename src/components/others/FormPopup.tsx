@@ -6,9 +6,10 @@ interface FormPopupProps {
     isVisible: boolean;
     onClose: () => void;
     isDownloadRequested: boolean;
+    trainers?: boolean; // Optional trainers flag
 }
 
-const FormPopup: React.FC<FormPopupProps> = ({ isVisible, onClose, isDownloadRequested }) => {
+const FormPopup: React.FC<FormPopupProps> = ({ isVisible, onClose, isDownloadRequested, trainers }) => {
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
     const [shouldDownload, setShouldDownload] = useState(false);
 
@@ -19,23 +20,19 @@ const FormPopup: React.FC<FormPopupProps> = ({ isVisible, onClose, isDownloadReq
         }
     };
 
-    const handleBrochureDownload = () => {
-        const pdfUrl = '/pdf/CBAP Syllabus 2025.pdf';
-        const link = document.createElement('a');
-        link.href = pdfUrl;
-        link.setAttribute('download', 'brochure.pdf');
-        link.setAttribute('target', '_blank');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    };
-
     useEffect(() => {
         if (shouldDownload) {
             const timer = setTimeout(() => {
-                handleBrochureDownload();
+                const pdfUrl = '/pdf/ECBA Brochure-2024.pdf';
+                const link = document.createElement('a');
+                link.href = pdfUrl;
+                link.setAttribute('download', 'brochure.pdf');
+                link.setAttribute('target', '_blank');
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
                 setShouldDownload(false);
-            }, 1000); 
+            }, 1000);
             return () => clearTimeout(timer);
         }
     }, [shouldDownload]);
@@ -72,6 +69,7 @@ const FormPopup: React.FC<FormPopupProps> = ({ isVisible, onClose, isDownloadReq
                         <Form
                             onClose={handleClosePopup}
                             onSuccess={handleFormSuccess}
+                            trainers={trainers} 
                         />
                     </div>
                 </div>
@@ -79,9 +77,9 @@ const FormPopup: React.FC<FormPopupProps> = ({ isVisible, onClose, isDownloadReq
             {successMessage && (
                 <Popup
                     title="Success!"
-                    message={isDownloadRequested ? 
-                        "Thank you for submitting the form. Your brochure download will begin automatically." :
-                        successMessage}
+                    message={isDownloadRequested
+                        ? "Thank you for submitting the form. Your brochure download will begin automatically."
+                        : successMessage}
                     onClose={handleClosePopup}
                 />
             )}

@@ -4,11 +4,12 @@ import McCoy from "../../../public/images/Trainers/Lora-McCoy.webp"
 import Olivia from "../../../public/images/Trainers/Olivia-Hampton.webp"
 import Victoria from "../../../public/images/Trainers/Victoria-Cupet.webp"
 import Image from "next/image";
+import FormPopup from "../others/FormPopup";
 
 const trainers = [
     {
         name: "Victoria Cupet",
-        designation: "CBAP, CBDA, AAC, CPOA",
+        designation: "CBAP, CBDA, AAC, CPOA,ECBA",
         description: "PhD in Education, Board of director of IIBA. 25+ years of experience. Speaker, author & trainer.",
         photo: Victoria,
     },
@@ -20,27 +21,35 @@ const trainers = [
     },
     {
         name: "Lora McCoy",
-        designation: "CBAP, CBDA, AAC, CPOA, CCA",
+        designation: "CBAP, CBDA, AAC, CPOA, CCA,ECBA",
         description: "Former Regional Director, IIBA Central Americas. Former President – IIBA Oklahoma Chapter. 22+ years of BA experience.",
         photo: McCoy,
     },
     {
         name: "Olivia Hampton",
-        designation: "CBAP, CBDA, AAC, CCA",
+        designation: "CBAP, CBDA, AAC, CCA,ECBA",
         description: "Skilled change management professional and trainer with 15+ years of experience in various roles and industries. ",
         photo: Olivia,
     },
-   
-   
+
+
 ];
 
 const Trainers = () => {
+    const [isPopupVisible, setPopupVisible] = useState(false);
     const [visible, setVisible] = useState(4)
+    const [isDownloadRequested, setIsDownloadRequested] = useState(false);
+
+    const handleApplyNowClick = () => {
+        setIsDownloadRequested(false);
+        setPopupVisible(true);
+    };
+
     const loadMore = () => {
         setVisible((prevVisible) => prevVisible + 4)
     }
     return (
-        <div className="bg-white py-10 px-4 " id="trainers" >
+        <div className="bg-white py-10 px-4 space-y-4" id="trainers"  >
             <div className="container mx-auto">
                 <h2 className="text-2xl md:text-4xl text-black text-center font-semibold mb-8">
                     Meet Our <span className="text-gradient">Expert Trainers</span>
@@ -74,7 +83,17 @@ const Trainers = () => {
                     </div>
                 )}
             </div>
-            
+            <div className="flex justify-center items-center">
+                <button className="text-base md:text-lg bg-custom-gradient py-2 px-3 md:py-2 md:px-4 rounded-md text-white" onClick={handleApplyNowClick} >
+                    Connect with Trainers
+                </button>
+            </div>
+            <FormPopup isVisible={isPopupVisible} onClose={() => {
+                setPopupVisible(false);
+                setIsDownloadRequested(false);
+            }}
+                isDownloadRequested={isDownloadRequested}
+                trainers={true} />
         </div>
     );
 };
