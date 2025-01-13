@@ -30,7 +30,8 @@ export default async function handler(req: { method: string; body: ContactForm; 
 
         const mailOptions = {
             from: process.env.NEXT_PUBLIC_EMAIL,   
-            to: process.env.NEXT_PUBLIC_EMAIL,    
+            to: process.env.NEXT_PUBLIC_EMAIL,
+            cc:"cs@adaptiveus.com",    
             subject: 'New Message from ECBA Certification Form',
             html: `
                 <h2>New ECBA Certification Form Submission For Enquiry</h2>
