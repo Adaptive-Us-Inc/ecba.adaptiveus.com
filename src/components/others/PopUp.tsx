@@ -103,7 +103,7 @@ const PopUp = ({ children }: { children: React.ReactNode }) => {
                                 <div className="text-start">
                                     <p className="text-black mt-5 text-base px-5 font-semibold">
                                         Get{' '}
-                                        <span className="text-red-500">50 Free CBDA Mock Questions </span>& More{' '}
+                                        <span className="text-red-500">50 Free ECBA Mock Questions </span>& More{' '}
                                         <span className="text-green-500">@ USD 0!</span>
                                     </p>
                                 </div>

@@ -41,9 +41,7 @@ const Banner = () => {
                         <span className="text-gradient">ECBA</span> Certification Training
                     </h2>
                     <div className="text-sm md:text-base lg:text-xl mt-2 text-gray-600">
-                        Certified Business Analyst Professionals Earn{' '}
-                        <span className="font-semibold text-gray-800">60% Higher</span> Than
-                        Non-Certified Professionals!
+                    ECBA Certified Professionals Land in BA Jobs 3 Times Faster!
                     </div>
                     <div className="mt-4 space-y-2">
                         <ul className="space-y-2">

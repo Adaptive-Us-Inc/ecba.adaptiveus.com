@@ -85,7 +85,7 @@ const Trainers = () => {
             </div>
             <div className="flex justify-center items-center">
                 <button className="text-base md:text-lg bg-custom-gradient py-2 px-3 md:py-2 md:px-4 rounded-md text-white" onClick={handleApplyNowClick} >
-                    Connect with Trainers
+                I&apos;m Interested
                 </button>
             </div>
             <FormPopup isVisible={isPopupVisible} onClose={() => {

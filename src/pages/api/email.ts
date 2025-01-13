@@ -29,9 +29,9 @@ export default async function handler(req: { method: string; body: ContactForm; 
         }
 
         const mailOptions = {
-            from: process.env.NEXT_PUBLIC_EMAIL,   
+            from: process.env.NEXT_PUBLIC_EMAIL, 
             to: process.env.NEXT_PUBLIC_EMAIL,
-            cc: process.env.NEXT_PUBLIC_CCEMAIL,    
+            cc: process.env.NEXT_PUBLIC_CCEMAIL,
             subject: 'New Message from ECBA Certification Form',
             html: `
                 <h2>New ECBA Certification Form Submission For Enquiry</h2>
