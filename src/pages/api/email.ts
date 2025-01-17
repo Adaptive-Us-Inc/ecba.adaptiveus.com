@@ -27,11 +27,14 @@ export default async function handler(req: { method: string; body: ContactForm; 
         if (!fullName || !email || !message || !city) {
             return res.status(400).send('Missing required fields');
         }
-
+        var ccList=[
+            'cs@adaptiveus.com',
+            'ann@adaptiveus.com'
+        ];
         const mailOptions = {
             from: process.env.NEXT_PUBLIC_EMAIL, 
             to: process.env.NEXT_PUBLIC_EMAIL,
-            cc: process.env.NEXT_PUBLIC_CCEMAIL,
+            cc: ccList,
             subject: 'New Message from ECBA Certification Form',
             html: `
                 <h2>New ECBA Certification Form Submission For Enquiry</h2>
