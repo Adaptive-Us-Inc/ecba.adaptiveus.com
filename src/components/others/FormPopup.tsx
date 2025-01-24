@@ -70,6 +70,7 @@ const FormPopup: React.FC<FormPopupProps> = ({ isVisible, onClose, isDownloadReq
                             onClose={handleClosePopup}
                             onSuccess={handleFormSuccess}
                             trainers={trainers} 
+                            id={trainers ? 'trainers-form' : 'popupform'}
                         />
                     </div>
                 </div>

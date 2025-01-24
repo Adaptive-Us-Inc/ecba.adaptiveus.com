@@ -48,7 +48,6 @@ export const handleFormSubmit = async (formData: {
             throw new Error(`Failed to send email: ${errorText}`);
         }
 
-        return "Form submitted successfully!";
     } catch (error) {
         console.error("Error during form submission:", error);
         return Promise.reject("An unknown error occurred. Please try again later.");

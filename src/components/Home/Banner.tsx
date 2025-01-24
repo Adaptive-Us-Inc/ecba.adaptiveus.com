@@ -96,6 +96,7 @@ const Banner = () => {
                         onClose={() => { }}
                         onSuccess={handleFormSuccess}
                         trainers={false}
+                        id={'popupform'}
                     />
                     {successMessage && (
                         <Popup

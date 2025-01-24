@@ -109,7 +109,7 @@ const PopUp = ({ children }: { children: React.ReactNode }) => {
                                 </div>
                             </div>
                             <div className="border p-4 rounded-lg">
-                                <Form onClose={() => { }} onSuccess={handleFormSuccess} />
+                                <Form onClose={() => { }} onSuccess={handleFormSuccess} id={'sitelevel-popup'} />
                             </div>
                         </div>
                         {/* Mobile View */}
@@ -160,7 +160,7 @@ const PopUp = ({ children }: { children: React.ReactNode }) => {
                             </button>
                             <div className={`overflow-hidden transition-all duration-300 ${activeIndex === 2 ? 'max-h-screen' : 'max-h-0'}`}>
                                 <div className="py-4">
-                                    <Form onClose={() => { }} onSuccess={handleFormSuccess} />
+                                    <Form onClose={() => { }} onSuccess={handleFormSuccess} id={'popup-form'} />
                                 </div>
                             </div>
                         </div>

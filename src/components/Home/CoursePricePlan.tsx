@@ -55,13 +55,17 @@ const CoursePricePlan = () => {
                         <tbody>
                             {plans.map((plan, index) => (
                                 <tr key={index} className="border-b">
-                                    <td className="py-4 px-6 text-gray-800  font-semibold">{plan.title}</td>
-                                    <td className="py-4 px-6 text-gray-800">
-                                        {plan.oldPrice && (
-                                            <p className="text-sm text-gray-500 line-through">{plan.oldPrice}</p>
-                                        )}
-                                        <p className="text-xl font-bold text-gray-800">{plan.price}</p>
-                                        <p className="text-sm text-green-600">{plan.discount}</p>
+                                    <td className="py-4 px-4 text-gray-800 font-semibold">{plan.title}</td>
+                                    <td className="py-4 px-4 text-gray-800">
+                                        <div className="flex flex-col items-center w-fit">
+                                            <p className="text-sm text-green-600">{plan.discount}</p>
+                                            <button
+                                                className="px-2 py-1.5 md:px-6 md:py-2 bg-custom-gradient text-white text-base md:text-lg rounded-full hover:bg-pink-500 transition"
+                                                onClick={handleApplyNowClick}
+                                            >
+                                                Get Price Info
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}

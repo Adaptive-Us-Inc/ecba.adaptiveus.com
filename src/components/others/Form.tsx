@@ -7,9 +7,10 @@ interface FormProps {
     onClose: () => void;
     onSuccess: (message: string) => void;
     trainers?: boolean; // Indicates whether the trainer-specific field should appear
+    id: string;
 }
 
-const Form: React.FC<FormProps> = ({ onClose, onSuccess, trainers }) => {
+const Form: React.FC<FormProps> = ({ onClose, onSuccess, trainers, id }) => {
     const [selectedCountry, setSelectedCountry] = useState("+1"); // Default to US
     const [phoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
@@ -86,7 +87,7 @@ const Form: React.FC<FormProps> = ({ onClose, onSuccess, trainers }) => {
         clearForm();
 
         try {
-            const resultMessage = await handleFormSubmit({
+            await handleFormSubmit({
                 fullName,
                 email,
                 selectedCountry,
@@ -95,11 +96,10 @@ const Form: React.FC<FormProps> = ({ onClose, onSuccess, trainers }) => {
                 message,
                 trainerOption: trainers ? trainerOption : '',
             });
-            onSuccess(resultMessage); // Display success message
         } catch (error) {
-            setAlertMessage( "An unknown error occurred. Please try again later."); // Display the specific error message
+            setAlertMessage("An unknown error occurred. Please try again later."); // Display the specific error message
         }
-        
+
     };
 
     const closeAlert = () => {
@@ -114,7 +114,7 @@ const Form: React.FC<FormProps> = ({ onClose, onSuccess, trainers }) => {
 
             {alertMessage && <Alert message={alertMessage} onClose={closeAlert} />}
 
-            <form className="space-y-3 flex flex-col items-center justify-center" onSubmit={handleSubmit}>
+            <form className="space-y-3 flex flex-col items-center justify-center" id={id} onSubmit={handleSubmit}>
                 <input
                     type="text"
                     className="border text-black py-2 md:py-2 lg:py-3 px-4 w-full text-xs md:text-sm lg:text-base md:w-11/12 focus:outline-none rounded-md"
@@ -170,21 +170,21 @@ const Form: React.FC<FormProps> = ({ onClose, onSuccess, trainers }) => {
                     </select>
                 )}
                 {/* {!trainers && ( */}
-                    <input
-                        type="text"
-                        className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-full md:w-11/12 focus:outline-none rounded-md"
-                        placeholder="Your City Name"
-                        value={city}
-                        onChange={(e) => setCity(e.target.value)}
-                    />
+                <input
+                    type="text"
+                    className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-full md:w-11/12 focus:outline-none rounded-md"
+                    placeholder="Your City Name"
+                    value={city}
+                    onChange={(e) => setCity(e.target.value)}
+                />
                 {/* )} */}
 
-                    <textarea
-                        className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-full md:w-11/12 focus:outline-none rounded-md"
-                        placeholder="Message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                    />
+                <textarea
+                    className="border text-black text-xs md:text-sm lg:text-base py-2 md:py-2 lg:py-3 px-4 w-full md:w-11/12 focus:outline-none rounded-md"
+                    placeholder="Message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                />
 
 
 
